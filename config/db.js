@@ -17,7 +17,7 @@ function connectDB() {
   connection.once('open', () => {
     console.log(`Database connected`);
   })
-    .catch((err) => {
+    .on('error', (err) => {
       console.log('Database connection failed', err);
       process.exit(1);
     });
